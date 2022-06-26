@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Camps;
+use App\Models\Camp;
 use Illuminate\Database\Seeder;
 
 class CampTableSeeder extends Seeder
@@ -31,7 +31,7 @@ class CampTableSeeder extends Seeder
         ];
 
         foreach ($camps as $key => $camp){
-            Camps::create($camp);
+            Camp::create($camp);
         }
     }
 }
