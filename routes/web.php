@@ -40,7 +40,6 @@ Route::middleware(['auth'])->group(function ()
     // user dashboard
     Route::get('dashboard', [HomeController::class, 'dashboard'])
         ->name('dashboard');
-
 });
 
 // Route::get('/dashboard', function () {
