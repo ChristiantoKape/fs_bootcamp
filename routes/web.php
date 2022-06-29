@@ -1,11 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\User\CheckoutController;
 use App\Http\Controllers\User\DashboardController as UserDashboard;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\CheckoutController as AdminCheckout;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,9 @@ Route::middleware(['auth'])->group(function ()
     // admin dashboard
     Route::prefix('admin/dashboard')->namespace('Admin')->name('admin.')->middleware('ensureUserRole:admin')->group(function(){
         Route::get('/', [AdminDashboard::class, 'dashboard'])->name('dashboard');
+
+        // admin checkout
+        Route::post('checkout/{checkout}', [AdminCheckout::class, 'update'])->name('checkout.update');
     });
 });
 
