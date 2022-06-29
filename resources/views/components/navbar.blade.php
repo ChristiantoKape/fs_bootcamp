@@ -8,7 +8,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="mb-2 navbar-nav me-auto mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Program</a>
                 </li>
@@ -26,7 +26,12 @@
                 <div class="d-flex user-logged nav-item dropdown no-arrow">
                     <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         Halo, {{ Auth::user()->name }}!
-                        <img src="{{ Auth::user()->avatar }}" class="user-photo" alt="">
+                        @if (Auth::user()->avatar)
+                            <img src="{{ Auth::user()->avatar }}" class="user-photo" alt="" style="border-radius: 50%">
+                        @else
+                            <img src="https://ui-avatars.com/api/?name=Admin" class="user-photo" alt="" style="border-radius: 50%">
+                        @endif
+                        
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="right:0; left:auto">
                             <li>
                                 <a href="{{ route('dashboard') }}" class="dropdown-item">My Dashboard</a>

@@ -33,7 +33,7 @@ class CheckoutController extends Controller
         // validation for landing page
         if($camp->isRegistered){
             $request->session()->flash('error', "You already registered on {$camp->title}" );
-            return redirect(route('dashboard'));
+            return redirect(route('user.dashboard'));
         }
 
         return view('checkout.create', [
