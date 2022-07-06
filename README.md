@@ -1,3 +1,3 @@
 CREATING WEBSITE BOOTCAMP
 
-prefers to buildwithangga premium class
+refers to buildwithangga premium class
